@@ -63,5 +63,10 @@
         </div>
     </div>
 
+
+<script>
+    var shipping = '{{order.shipping}}'
+    var total = '{{order.get_cart_total}}'
+</script>
 <script type="text/javascript" src="{% static 'js/checkout.js' %}"></script>
 {% endblock content %}

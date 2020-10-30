@@ -88,6 +88,7 @@ def updateItem(request):
     orderItem.save()
 
     if orderItem.quantity <= 0:
+        print('orderItem deleted')
         orderItem.delete()
     
     return JsonResponse('Item was added', safe=False)
@@ -97,7 +98,7 @@ def processOrder(request):
     transaction_id = datetime.datetime.now().timestamp()
     data = json.loads(request.body)
 
-    if request.user.authenticated:
+    if request.user.is_authenticated:
         customer = request.user.customer
         order, create = Order.objects.get_or_create(customer=customer, complete=False)
         total = float(data['form']['total'])

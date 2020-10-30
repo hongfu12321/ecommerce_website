@@ -1,8 +1,21 @@
-var shipping = '{{order.shipping}}'
-var total = '{{order.get_cart_total|floatformat:2}}'
+// These two variables define in checkout.html
+// var shipping = '{{order.shipping}}'
+// var total = '{{order.get_cart_total}}'
+
 
 if (shipping == 'False'){
     document.getElementById('shipping-info').innerHTML = ''
+}
+
+if (user != 'AnonymousUser'){
+    document.getElementById('user-info').innerHTML = ''
+}
+
+if (shipping == 'False' && user != ''){
+    //Hide entire form if user is logged in and shipping is false
+    document.getElementById('form-wrapper').classList.add("hidden");
+    //Show payment if logged in user wants to buy an item that does not require shipping
+    document.getElementById('payment-info').classList.remove("hidden");
 }
 
 var form = document.getElementById('form')
@@ -18,16 +31,6 @@ document.getElementById('make-payment').addEventListener('click', function(e){
     submitFormData()
 })
 
-    if (user != 'AnonymousUser'){
-        document.getElementById('user-info').innerHTML = ''
-    }
-
-if (shipping == 'False' && user != ''){
-    //Hide entire form if user is logged in and shipping is false
-    document.getElementById('form-wrapper').classList.add("hidden");
-    //Show payment if logged in user wants to buy an item that does not require shipping
-    document.getElementById('payment-info').classList.remove("hidden");
-}
 
 function submitFormData(){
     console.log('Payment button clicked')
