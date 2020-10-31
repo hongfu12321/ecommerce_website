@@ -56,9 +56,9 @@
                     <div style="flex:1"><p>{{item.product.price}}</p></div>
                     <div style="flex:1"><p>{{item.quantity}}</p></div>
                 </div>
-                <h5>Items:  {{order.get_cart_items}}</h5>
-                <h5>Total:  ${{order.get_cart_total}}</h5>
                 {% endfor %}
+                <h5>Items:  {{order.get_cart_items}}</h5>
+                <h5>Total:  ${{order.get_cart_total|floatformat:2}}</h5>
             </div>
         </div>
     </div>
