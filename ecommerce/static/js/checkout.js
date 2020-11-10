@@ -27,10 +27,6 @@ form.addEventListener('submit', function(e){
     document.getElementById('payment-info').classList.remove("hidden")
 })
 
-document.getElementById('make-payment').addEventListener('click', function(e){
-    submitFormData()
-})
-
 
 function submitFormData(){
     console.log('Payment button clicked')
@@ -77,6 +73,10 @@ function submitFormData(){
     .then((data) => {
         console.log('Success', data);
         alert('Transaction completed');
+
+        cart = {}
+        document.cookie = 'cart=' + JSON.stringify(cart) + ';domain=;path=/'
+
         window.location.href = root_url
     })
 }
