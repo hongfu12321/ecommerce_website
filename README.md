@@ -7,17 +7,18 @@ A E-commerce website allow seller to host their products, get order and shipping
 
 ## Demo
 Home Page
-![]()
+![](img/home_page.png)
 
 Cart Page
-![]()
+![](img/cart_page.png)
 
 Checkout Page
-![]()
+![](img/checkout_page.png)
 
 Paypal API
-![]()
+![](paypal_api.png)
 
-Login Page
-![]()
-
+Login Page, Register Page,Logout Page
+![](login.png)
+![](register.png)
+![](logout.png)
