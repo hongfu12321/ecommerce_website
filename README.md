@@ -19,6 +19,6 @@ Paypal API
 ![](paypal_api.png)
 
 Login Page, Register Page,Logout Page
-![](login.png)
-![](register.png)
-![](logout.png)
+![](img/login.png)
+![](img/register.png)
+![](img/logout.png)
